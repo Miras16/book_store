@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Registration</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{% static 'App/csslg/registration.css'%}">
+	</head>
+
+	<body>
+
+		<div class="wrapper" style="background-image: url('{% static 'App/imageslg/bg-registration-form-1.jpg'%}');">
+			<div class="inner">
+				<div class="image-holder">
+					<img src="{% static 'App/imageslg/pexels-taryn-elliott-4440123.jpg'%}" alt="">
+				</div>
+				<form action="{% url 'signup' %}" method="post">
+					{% csrf_token %}
+					<h3>Registration Form</h3>
+					<div class="form-group">
+						<input type="text" placeholder="First Name" name='first_name' class="form-control">
+						<input type="text" placeholder="Last Name" name='last_name' class="form-control">
+					</div>
+					<div class="form-wrapper">
+						<input type="text" placeholder="Username" name='username' class="form-control">
+						<i class="zmdi zmdi-account"></i>
+					</div>
+					<div class="form-wrapper">
+						<input type="text" placeholder="Email Address" name='email' class="form-control">
+						<i class="zmdi zmdi-email"></i>
+					</div>
+					
+					<div class="form-wrapper">
+						<input type="password" placeholder="Password" name='password1' class="form-control">
+						<i class="zmdi zmdi-lock"></i>
+					</div>
+					<div class="form-wrapper">
+						<input type="password" placeholder="Confirm Password" name='password2' class="form-control">
+						<i class="zmdi zmdi-lock"></i>
+					</div>
+					{% if message %}
+						<p>{{message}}</p>
+					{% endif %}
+					<button>Register
+						<i class="zmdi zmdi-arrow-right"></i>
+					</button>
+				</form>
+			</div>
+		</div>
+		
+	</body>
+</html>

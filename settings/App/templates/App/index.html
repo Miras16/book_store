@@ -51,13 +51,14 @@
 				<div class="col-md-6">
 					<div class="right-element">
 						{% if request.user.is_authenticated %}
+						<a class="cart for-buy banner-title"> Welcome {{user.username}} !!!</a>
 						<a href="/logout" class="cart for-buy"><img src='{% static 'App/img/logout.png' %}' style="width:17px; height:17px"></a>
 						
 						{% else %}
 
-						<a href="/signin" class="user-account for-buy"><i class="icon icon-user"></i><span></span></a>
+						<a href="/signin" class="user-account for-buy"><i class="icon icon-user icon-lg" style="font-size: 1.24em; position:relative; top:3px;"></i><span></span></a>
 						
-						<a href="/signup" class="cart for-buy"><img src='{% static 'App/img/add-user.png' %}' style="width:17px; height:17px"></a>
+						<a href="/signup" class="cart for-buy"><img src='{% static 'App/img/add-user.png' %}' style="width:19px; height:17px"></a>
 						{% endif %}
 						<div class="action-menu">
 

@@ -18,7 +18,7 @@ def login(request):
             return redirect('/')
         else:
             form = AuthenticationForm()
-            return redirect('login')
+            return render(request,'App/login.html',{'message':'Password or username wrong'})
     else: 
         form = AuthenticationForm()
         return render(request,template_name='App/login.html')
